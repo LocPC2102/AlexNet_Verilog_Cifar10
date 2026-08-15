@@ -16,6 +16,8 @@ verification.
 This project implements a lightweight AlexNet-based CNN for CIFAR-10 and explores its deployment as a hardware accelerator using Verilog RTL. The project covers:
 **PyTorch Training → Calibration → INT8 Quantization → Parameter Export → Integer Reference Model → Verilog RTL → Vivado Verification**
 
+---
+
 ### TECHNOLOGY
 #### AI / Software
 - Python
