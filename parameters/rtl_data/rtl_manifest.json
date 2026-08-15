@@ -1,0 +1,166 @@
+{
+  "network": "CIFAR-10 ten-class AlexNet-style CNN",
+  "input": {
+    "shape": [
+      3,
+      32,
+      32
+    ],
+    "layout": "channel-row-column",
+    "count": 3072,
+    "data_type": "signed_int8",
+    "memory_file": "input_image.mem"
+  },
+  "classes": [
+    "airplane",
+    "automobile",
+    "bird",
+    "cat",
+    "deer",
+    "dog",
+    "frog",
+    "horse",
+    "ship",
+    "truck"
+  ],
+  "expected_logits": [
+    24,
+    35,
+    -26,
+    -48,
+    -34,
+    -43,
+    -37,
+    -49,
+    37,
+    24
+  ],
+  "expected_class": 8,
+  "requantization": {
+    "format": "Q0.24 integer multiplier",
+    "shift": 24,
+    "layers": {
+      "conv1": {
+        "floating_multiplier": 0.0006239154199217113,
+        "integer_multiplier": 10468,
+        "integer_multiplier_hex": "000028e4",
+        "shift": 24,
+        "weight_count": 600,
+        "bias_count": 8
+      },
+      "conv2": {
+        "floating_multiplier": 0.0025384861570565027,
+        "integer_multiplier": 42589,
+        "integer_multiplier_hex": "0000a65d",
+        "shift": 24,
+        "weight_count": 1152,
+        "bias_count": 16
+      },
+      "conv3": {
+        "floating_multiplier": 0.00517987205501361,
+        "integer_multiplier": 86904,
+        "integer_multiplier_hex": "00015378",
+        "shift": 24,
+        "weight_count": 4608,
+        "bias_count": 32
+      },
+      "conv4": {
+        "floating_multiplier": 0.004070176528175601,
+        "integer_multiplier": 68286,
+        "integer_multiplier_hex": "00010abe",
+        "shift": 24,
+        "weight_count": 9216,
+        "bias_count": 32
+      },
+      "conv5": {
+        "floating_multiplier": 0.003744498085931393,
+        "integer_multiplier": 62822,
+        "integer_multiplier_hex": "0000f566",
+        "shift": 24,
+        "weight_count": 4608,
+        "bias_count": 16
+      },
+      "fc6": {
+        "floating_multiplier": 0.0038516214302905883,
+        "integer_multiplier": 64619,
+        "integer_multiplier_hex": "0000fc6b",
+        "shift": 24,
+        "weight_count": 16384,
+        "bias_count": 64
+      },
+      "fc7": {
+        "floating_multiplier": 0.003962087272091994,
+        "integer_multiplier": 66473,
+        "integer_multiplier_hex": "000103a9",
+        "shift": 24,
+        "weight_count": 2048,
+        "bias_count": 32
+      },
+      "fc8": {
+        "floating_multiplier": 0.008433547322329841,
+        "integer_multiplier": 141491,
+        "integer_multiplier_hex": "000228b3",
+        "shift": 24,
+        "weight_count": 320,
+        "bias_count": 10
+      }
+    }
+  },
+  "quantization_configuration": {
+    "input_scale": 0.007874015748031496,
+    "activation_scales": {
+      "input": 0.007874015748031496,
+      "conv1": 0.03608312381534126,
+      "pool1": 0.03608312381534126,
+      "conv2": 0.051128736631138115,
+      "pool2": 0.051128736631138115,
+      "conv3": 0.05445679341714213,
+      "conv4": 0.0857615733709861,
+      "conv5": 0.12664883530984714,
+      "pool5": 0.12664883530984714,
+      "fc6": 0.17700307951198788,
+      "fc7": 0.22000311303326464,
+      "fc8": 0.19026972552922766
+    },
+    "weight_scales": {
+      "conv1": 0.0028591278031116396,
+      "conv2": 0.0035969610289325864,
+      "conv3": 0.005517038773363969,
+      "conv4": 0.00640993934916699,
+      "conv5": 0.0055297064030264305,
+      "fc6": 0.005382985580624558,
+      "fc7": 0.004924612251792367,
+      "fc8": 0.0072937546752569245
+    },
+    "layer_order": [
+      "conv1",
+      "pool1",
+      "conv2",
+      "pool2",
+      "conv3",
+      "conv4",
+      "conv5",
+      "pool5",
+      "fc6",
+      "fc7",
+      "fc8"
+    ],
+    "input_shape": [
+      3,
+      32,
+      32
+    ],
+    "class_names": [
+      "airplane",
+      "automobile",
+      "bird",
+      "cat",
+      "deer",
+      "dog",
+      "frog",
+      "horse",
+      "ship",
+      "truck"
+    ]
+  }
+}
